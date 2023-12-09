@@ -171,7 +171,6 @@ func part1() int {
 		location_temp := mappedValue(hlmp, humidity)
 		location = min(location, location_temp)
 	}
-
 	return location
 }
 
