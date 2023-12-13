@@ -84,7 +84,6 @@ func part1() int {
 			}
 		}
 	}
-
 	return int(ans) / 2
 }
 
@@ -154,7 +153,6 @@ func part2() int {
 			}
 		}
 	}
-
 	return int(ans) / 2
 }
 
