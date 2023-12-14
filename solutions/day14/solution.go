@@ -142,20 +142,26 @@ func part2() int {
 	}
 
 	mp := make(map[string]int)
+	flag := false
+	rem := 0
 
 	for i := 1; i <= 1000000000; i++ {
 		cycle(arr)
 		if elem, ok := mp[convert(arr)]; ok {
-			rem := (1000000000 - elem) % (i - elem)
-			for j := 0; j < rem; j++ {
-				cycle(arr)
-			}
-			return solve(arr)
+			rem = (1000000000 - elem) % (i - elem)
+			flag = true
+			break
+		}
+		if flag {
+			break
 		}
 		mp[convert(arr)] = i
 
 	}
-	return 1
+	for i := 0; i < rem; i++ {
+		cycle(arr)
+	}
+	return solve(arr)
 }
 
 func main() {
